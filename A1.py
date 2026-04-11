@@ -80,4 +80,17 @@ def player(x, y):
     # Draw the player on the screen
     screen.blit(playerImg, (x,y))
 
-                        
+def enemy(x, y, i):
+    # Draw an enemy on the screen
+    screen.blit(enemyImg[i], (x, y))
+
+def fire_bullet(x, y):
+    # Fire a bullet from the player's position
+    global bullet_state
+    bullet_state = "fire"
+    screen.blit(bulletImg, (x + 16, y + 10))
+
+def isCollision(enemyX, enemyY, bulletX, bulletY):
+    # Check if there is a collision between the enemy and a bullet
+    distance = math.sqrt((enemyX - bulletX) ** 2 + (enemyY - bulletY) ** 2)
+    return distance < COLLISION_DISTANCE                        
