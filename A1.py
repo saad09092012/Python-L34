@@ -25,7 +25,7 @@ background = pygame.image.load('Space Invader Background.jpg')
 
 # Caption and Icon
 pygame.display.set_caption("Space Invader")
-icon = pygame.image.load('')
+icon = pygame.image.load('Space Invader Background.jpg')
 pygame.display.set_icon(icon)
 
 # Player
@@ -43,14 +43,14 @@ enemyY_change = []
 num_of_enemies = 6
 
 for _i in range(num_of_enemies):
-    enemyImg.append(pygame.image.load(''))
+    enemyImg.append(pygame.image.load('Space_Invader_Enemies-removebg-preview.png'))
     enemyX.append(random.randint(0, SCREEN_WIDTH - 64)) # 64 is the size of the enemy
     enemyY.append(random.randint(ENEMY_START_Y_MIN, ENEMY_START_Y_MAX)) 
     enemyX_change.append(ENEMY_SPEED_X)
     enemyY_change.append(ENEMY_SPEED_Y)
 
 # Bullet
-bulletImg = pygame.image.load('')
+bulletImg = pygame.image.load('Space_Invader_bullets-removebg-preview.png')
 bulletX = 0
 bulletY = PLAYER_START_Y
 bulletX_change = 0
@@ -59,12 +59,12 @@ bullet_state = "ready"
 
 # Score
 score_value = 0
-font = pygame.font.Font('', 32)
+font = pygame.font.Font('Space_Invader_Enemies-removebg-preview.png', 32)
 textX = 10
 textY = 10
 
 # Game Over Text
-over_font = pygame.font.Font('', 64)
+over_font = pygame.font.Font('Space_Invader_bullets-removebg-preview.png', 64)
 
 def show_score(x, y):
     # Display the current score on the screen.
@@ -98,7 +98,7 @@ def isCollision(enemyX, enemyY, bulletX, bulletY):
 #Game loop
 running  = True
 while running:
-    screen.fill(0, 0, 0))
+    screen.fill(0, 0, 0)
     screen.blit(background, (0, 0))
 
     for event in pygame.event.get():
